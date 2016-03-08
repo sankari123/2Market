@@ -1,21 +1,14 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>meMO</title>
-	
-    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-    <script type="text/javascript" charset="utf-8" src="SpeechRecognizer.js"></script>
-   <script type="text/javascript">
-    var recognition = new SpeechRecognition();
-    recognition.onresult = function(event) {
-      if (event.results.length > 0) {
-        q.value = event.results[0][0].transcript;
-        q.form.submit();
-      }
-    }
-  </script>
-
-  <form action="http://www.example.com/search">
-    <input type="search" id="q" name="q" size=60>
-    <input type="button" value="Click to Speak" onclick="recognition.start()">
-  </form>
+<!DOCTYPE HTML>
+      <html>
+           <head>
+                 <title>Speech To Voice Conversion</title>
+                 <script src="cordova-2.0.0.js"></script> 
+                 <script src="jquery-1.9.1.min.js"></script>
+                 <script src="SpeechRecognizer.js"></script>      
+                 <script src="index.js"></script>
+         </head>
+         <body>
+               <input type="button" id="speechButton" value="Speak Now" onclick="onDeviceReady();"/>
+               <div id="results"></div>
+         </body>
+</html>
